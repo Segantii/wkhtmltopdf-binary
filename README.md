@@ -1,10 +1,10 @@
-# Tester
+# Wkhtmltopdf Binary's for Linux and OSX
 
 This is an updated package that neatly wraps the binarys for [wkhtmltopdf](http://wkhtmltopdf.org)
 
 ## Usage
 
-TODO: Write usage instructions here
+Include this gem in your gem file and use with [wicked_pdf](https://github.com/mileszs/wicked_pdf)
 
 ## Contributing
 
