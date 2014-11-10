@@ -1,23 +1,23 @@
-Gem::Specification.new do |s|
-  s.platform = Gem::Platform::RUBY
-  s.name = 'wkhtmltopdf-binary'
-  s.version = '0.9.9'
-  s.summary = 'Provides binaries for WKHTMLTOPDF project in an easily accessible package.'
-  s.description = ''
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'tester/version'
 
-  s.required_ruby_version = '>= 1.8.7'
-  s.required_rubygems_version = ">= 1.3.6"
+Gem::Specification.new do |spec|
+  spec.name          = "wkhtmltopdf-binary"
+  spec.version       = "0.12.1"
+  spec.authors       = ["Research Information Systems, The University of Iowa"]
+  spec.email         = ["vpr-ris-developers@iowa.uiowa.edu", "mcollas@aconex.com"]
+  spec.summary       = "Neatly packages the Linux, Osx binaries needed for WKHTMLTOPDF project"
+  spec.description   = spec.summary
+  spec.homepage      = ""
+  spec.license       = "MIT"
 
-  s.author = '- Research Information Systems, The University of Iowa'
-  s.homepage = ''
-  s.email = 'vpr-ris-developers@iowa.uiowa.edu,mcollas@aconex.com'
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  s.bindir = 'bin'
-  s.executables = %w(wkhtmltopdf)
-
-  s.files = %w(
-    lib/wkhtmltopdf-binary.rb bin/wkhtmltopdf
-    libexec/wkhtmltopdf-darwin-x86
-    libexec/wkhtmltopdf-linux-amd64
-    libexec/wkhtmltopdf-linux-x86)
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
